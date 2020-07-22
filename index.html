@@ -31,7 +31,7 @@
             <div class="col-md-4">
                 <div class="content">
                     <p>Dipoist</p>
-                    <h2>$ <sapn> 542 </sapn>
+                    <h2>$ <sapn id="currentDiposit"> 13 </sapn>
                     </h2>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div class="col-md-4">
                 <div class="content">
                     <p>Balance</p>
-                    <h2>$ <sapn> 5427 </sapn>
+                    <h2>$ <sapn id="currentBalance"> 190 </sapn>
                     </h2>
                 </div>
             </div>
@@ -55,9 +55,9 @@
                 <div class="col-md-6">
                     <div class="inputContainer">
                     <p class="margin-0"> Diposit </p>
-                    <input type="text" class="form-control">
+                    <input id="enterDepositAmount" type="text" class="form-control">
                     <div class="text-right mt-3">
-                        <button class="btn btn-primary"> Diposit </button>
+                        <button id="dipositBtn" class="btn btn-primary"> Diposit </button>
                     </div>
                 </div>
                 </div>
@@ -82,6 +82,21 @@
                 loginArea.style.display = "none";
                 const mainArea = document.getElementById("mainContent");
                 mainArea.style.display = "block";
+            })
+
+            // Deposit Button Event Handler
+            const depositButton = document.getElementById("dipositBtn");
+            depositButton.addEventListener("click", function(){
+                const depositAmount = document.getElementById("enterDepositAmount").value;
+                const depositNumber = parseFloat(depositAmount);
+
+                const currentDipositNumber = document.getElementById("currentDiposit").innerText;
+                const dipositStringToNumber = parseFloat(currentDipositNumber);
+
+                const totalDeposit = depositNumber + dipositStringToNumber;
+                document.getElementById("currentDiposit").innerText = totalDeposit;
+
+                document.getElementById("enterDepositAmount").value = "";
             })
         </script>
 </body>
