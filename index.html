@@ -26,14 +26,64 @@
         </div>
     </div>
 
-    <script>
-        const loginButton = document.getElementById('loginBtn');
-        loginButton.addEventListener("click", function () {
-            const loginArea = document.getElementById("logIn");
-            loginArea.style.display = "none";
+    <div id="mainContent">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="content">
+                    <p>Dipoist</p>
+                    <h2>$ <sapn> 542 </sapn>
+                    </h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="content">
+                    <p>Withdrow</p>
+                    <h2>$ <sapn> 52 </sapn>
+                    </h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="content">
+                    <p>Balance</p>
+                    <h2>$ <sapn> 5427 </sapn>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="inputContainer">
+                    <p class="margin-0"> Diposit </p>
+                    <input type="text" class="form-control">
+                    <div class="text-right mt-3">
+                        <button class="btn btn-primary"> Diposit </button>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="inputContainer">
+                    <p class="margin-0"> Withdraw </p>
+                    <input type="text" class="form-control">
+                    <div class="text-right mt-3">
+                        <button class="btn btn-primary"> Withdraw </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
 
-        })
-    </script>
+
+        <script>
+            // Login Buton event handler
+            const loginButton = document.getElementById('loginBtn');
+            loginButton.addEventListener("click", function () {
+                const loginArea = document.getElementById("logIn");
+                loginArea.style.display = "none";
+                const mainArea = document.getElementById("mainContent");
+                mainArea.style.display = "block";
+            })
+        </script>
 </body>
 
 </html>

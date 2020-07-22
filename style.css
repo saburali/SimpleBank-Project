@@ -5,7 +5,8 @@ body {
     align-items: center;
 }
 
-#logIn {
+#logIn,
+.inputContainer {
     padding: 40px;
     margin: 20px;
     border-radius: 5px;
@@ -14,4 +15,37 @@ body {
 
 #logIn h2 {
     text-align: center;
+}
+
+#mainContent {
+    display: none;
+    min-width: 70%;
+}
+
+#mainContent .content {
+    color: #fff;
+    padding: 30px 50px;
+    border-radius: 7px;
+}
+
+#mainContent .content h2 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+#mainContent  .col-md-4:first-child .content {
+    background-color: #f1c40f;
+}
+
+#mainContent  .col-md-4:nth-child(2) .content {
+    padding: 30px 50px;
+    background-color: #2ecc71;
+}
+
+#mainContent  .col-md-4:last-child .content {
+    background-color: #e74c3c;
+}
+
+.inputContainer {
+    margin: 0px 25px;
 }
