@@ -90,19 +90,17 @@
                 const depositAmount = document.getElementById("enterDepositAmount").value;
                 const depositNumber = parseFloat(depositAmount);
 
-                const currentDipositNumber = document.getElementById("currentDiposit").innerText;
-                const dipositStringToNumber = parseFloat(currentDipositNumber);
+                function updateSpanText(id, depositNumber){
+                    const currentBalance = document.getElementById(id).innerText;
+                    const currentBalanceNumber = parseFloat(currentBalance);
+                    const totalBalance = depositNumber + currentBalanceNumber;
+                    document.getElementById(id).innerText = totalBalance;
+                }
 
-                const totalDeposit = depositNumber + dipositStringToNumber;
-                document.getElementById("currentDiposit").innerText = totalDeposit;
+                updateSpanText("currentDiposit", depositNumber);
+                updateSpanText("currentBalance", depositNumber);
 
                 document.getElementById("enterDepositAmount").value = "";
-
-                // Balance Button Event Handler
-                const currentBalance = document.getElementById("currentBalance").innerText;
-                const balanceStringToNumber = parseFloat(currentBalance);
-                const addBalance = depositNumber + balanceStringToNumber;
-                document.getElementById("currentBalance").innerText = addBalance;
             })
         </script>
 </body>
