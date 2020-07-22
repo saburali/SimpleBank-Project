@@ -31,7 +31,7 @@
             <div class="col-md-4">
                 <div class="content">
                     <p>Dipoist</p>
-                    <h2>$ <sapn id="currentDiposit"> 13 </sapn>
+                    <h2>$ <sapn id="currentDiposit"> 00 </sapn>
                     </h2>
                 </div>
             </div>
@@ -54,21 +54,21 @@
             <div class="row mt-5">
                 <div class="col-md-6">
                     <div class="inputContainer">
-                    <p class="margin-0"> Diposit </p>
-                    <input id="enterDepositAmount" type="text" class="form-control">
-                    <div class="text-right mt-3">
-                        <button id="dipositBtn" class="btn btn-primary"> Diposit </button>
+                        <p class="margin-0"> Diposit </p>
+                        <input id="enterDepositAmount" type="text" class="form-control">
+                        <div class="text-right mt-3">
+                            <button id="dipositBtn" class="btn btn-primary"> Diposit </button>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div class="col-md-6">
                     <div class="inputContainer">
-                    <p class="margin-0"> Withdraw </p>
-                    <input type="text" class="form-control">
-                    <div class="text-right mt-3">
-                        <button class="btn btn-primary"> Withdraw </button>
+                        <p class="margin-0"> Withdraw </p>
+                        <input type="text" class="form-control">
+                        <div class="text-right mt-3">
+                            <button class="btn btn-primary"> Withdraw </button>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
 
             // Deposit Button Event Handler
             const depositButton = document.getElementById("dipositBtn");
-            depositButton.addEventListener("click", function(){
+            depositButton.addEventListener("click", function () {
                 const depositAmount = document.getElementById("enterDepositAmount").value;
                 const depositNumber = parseFloat(depositAmount);
 
@@ -97,6 +97,12 @@
                 document.getElementById("currentDiposit").innerText = totalDeposit;
 
                 document.getElementById("enterDepositAmount").value = "";
+
+                // Balance Button Event Handler
+                const currentBalance = document.getElementById("currentBalance").innerText;
+                const balanceStringToNumber = parseFloat(currentBalance);
+                const addBalance = depositNumber + balanceStringToNumber;
+                document.getElementById("currentBalance").innerText = addBalance;
             })
         </script>
 </body>
