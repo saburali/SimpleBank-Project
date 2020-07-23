@@ -100,12 +100,7 @@
                 const amountNumber = getInputNumber("withdrawAmount");
 
                 updateSpanText("currentWithdraw", amountNumber);
-
-                const subBalance = document.getElementById("currentBalance").innerText;
-                const subTotalBalance = parseFloat(subBalance);
-
-                const totalBalanceResult = subTotalBalance - amountNumber;
-                document.getElementById("currentBalance").innerText = totalBalanceResult;
+                updateSpanText("currentBalance", -1 * amountNumber);
 
                 document.getElementById("withdrawAmount").value = "";
 
