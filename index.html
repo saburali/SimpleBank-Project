@@ -115,17 +115,17 @@
 
             })
 
+            function getInputNumber(id){
+                const amount = document.getElementById(id).value;
+                const amountNumber = parseFloat(amount);
+                return amountNumber;
+            }
+
             function updateSpanText(id, depositNumber) {
                 const currentBalance = document.getElementById(id).innerText;
                 const currentBalanceNumber = parseFloat(currentBalance);
                 const totalBalance = depositNumber + currentBalanceNumber;
                 document.getElementById(id).innerText = totalBalance;
-            }
-
-            function getInputNumber(id){
-                const withdrawAmount = document.getElementById(id).value;
-                const amountNumber = parseFloat(withdrawAmount);
-                return amountNumber;
             }
         </script>
 </body>
